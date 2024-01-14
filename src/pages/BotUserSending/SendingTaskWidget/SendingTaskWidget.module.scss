@@ -1,0 +1,54 @@
+
+
+.SendingTaskWidget {
+    &__block {
+        min-width: 300px;
+        min-height: 50px;
+        background-color: rgb(186, 186, 186);
+
+        display: flex;
+        flex-direction: row;
+        cursor: default;
+        color: black;
+
+        transition: .2s background-color;
+        
+        &:hover {
+            background-color: rgb(151, 151, 151);
+            button {
+                opacity: 1;
+            }
+            
+        }
+    }
+    
+
+    
+    &__article {
+        flex: 1;
+        line-height: 50px;
+        text-align: center;
+        
+        button {
+            width: 100%;
+            height: 100%;
+            
+            
+            border: none;
+            outline: none;
+            background: none;
+            cursor: pointer;
+            color: black;
+            
+            transition: .2s opacity;
+            opacity: 0;
+            &:hover {
+                text-decoration: underline;
+            }
+
+        }
+    }
+
+
+    
+}

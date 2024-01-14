@@ -1,8 +1,10 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:
+    system-ui, -apple-system, BlinkMacSystemFont, 
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+    'Open Sans', 'Helvetica Neue', sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +12,44 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+a, button, .fileUploadButton__label, select {
+  &:not(.noop) {
+    font-size: 20px;    
+    box-shadow: 0 0 5px  black;
+    border-radius: 10px;
+    padding: 10px;
+
+    border: none;
+    text-decoration: none;
+    color: black;
+
+    transition: .2s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(224, 224, 224);
+        box-shadow: none;
+    }
+
+  }
+  
+
+  
+
+}
+
+input, textarea {
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid gray;
+
+  &:focus {
+    border: 2px solid blue;
+    
+  }
 }
