@@ -15,6 +15,20 @@ var testData = [
 
 var getSectionDataUrl = ServerApi.UrlByRoot("/BotSection/get")
 
+var textMapping = {
+    start: "Стартове меню",
+    my_orders: "Мої замовлення",
+    call_back: "Замовити дзвінок",
+
+    send_review: "Відправити відгук",
+    send_review__bad: "Відправити рекламацію",
+    send_review__good: "Відправити похвалу",
+
+    philias: "Філії міста",
+    "philia-view": "Огляд філії",
+    philiasCities: "Міста філій",
+}
+
 var CircleChart = () => {
     var [data, setData] = useState([]);
     var [isLoading, setIsLoading] = useState(true);
@@ -26,11 +40,17 @@ var CircleChart = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            method: 'GET'
+            method: 'GET',
         })
         .then(r => r.json())
         .then(data => {
-            setData(data);
+            setData(data.map((entry) => {
+                var fixedName = textMapping[entry.name] || entry.name
+                return {
+                    ...entry,
+                    name: fixedName,
+                }
+            }));
 
             setIsLoading(prev => prev ? false: prev)
         })    

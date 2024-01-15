@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "server": {
-    "domain": "http://127.0.0.1:3000",
+    "domain": "https://server.dencelman.com",
     "databaseDomain": "https://bots-database.dencelman.com"
   },
 
